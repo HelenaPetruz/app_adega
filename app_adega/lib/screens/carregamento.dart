@@ -1,5 +1,6 @@
 import 'package:app_adega/theme/fontes.dart';
 import 'package:app_adega/theme/imagens.dart';
+import 'package:app_adega/widgets/btn1.dart';
 import 'package:app_adega/widgets/plano_fundo.dart';
 import 'package:flutter/material.dart';
 
@@ -15,21 +16,37 @@ class _CarregamentoState extends State<Carregamento> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PlanoFundo(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Adega", style: Fontes.titulo),
+        child: Stack(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
 
-              ElevatedButton(onPressed: () {}, child: Text("Entrar")),
+                children: [
+                  Padding(
+                    padding: EdgeInsetsGeometry.only(top: 50, bottom: 70),
+                    child: Text("Adega", style: Fontes.titulo),
+                  ),
 
-              Image.asset(Imagens.setaCarregamento),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Btn1(label: 'Entrar', onPressed: () {}),
+                      const SizedBox(height: 1),
+                      Image.asset(Imagens.setaCarregamento),
+                      const SizedBox(height: 1),
+                      Btn1(label: 'Cadastre-se', onPressed: () {}),
+                    ],
+                  ),
+                ],
+              ),
+            ),
 
-              ElevatedButton(onPressed: () {}, child: Text("Cadastrar-se")),
-
-              Image.asset(Imagens.garrafaCarregamento),
-            ],
-          ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Image.asset(Imagens.garrafaCarregamento),
+            ),
+          ],
         ),
       ),
     );
