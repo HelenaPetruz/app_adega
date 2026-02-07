@@ -7,4 +7,5 @@ class Cores {
   static const tintoEscuro = Color(0xFF89141C);
   static const rosaChiclete = Color(0xFFf05D67);
   static const rosaBallet = Color(0xFFfAA191);
+  static const branco = Color.fromARGB(255, 250, 189, 179);
 }

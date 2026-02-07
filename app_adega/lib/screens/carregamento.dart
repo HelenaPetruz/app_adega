@@ -25,17 +25,27 @@ class _CarregamentoState extends State<Carregamento> {
                 children: [
                   Padding(
                     padding: EdgeInsetsGeometry.only(top: 50, bottom: 70),
-                    child: Text("Adega", style: Fontes.titulo),
+                    child: Text("Adega", style: Fontes.titulo3),
                   ),
 
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Btn1(label: 'Entrar', onPressed: () {}),
+                      Btn1(
+                        label: 'Entrar',
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
+                      ),
                       const SizedBox(height: 1),
                       Image.asset(Imagens.setaCarregamento),
                       const SizedBox(height: 1),
-                      Btn1(label: 'Cadastre-se', onPressed: () {}),
+                      Btn1(
+                        label: 'Cadastre-se',
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/cadastro');
+                        },
+                      ),
                     ],
                   ),
                 ],

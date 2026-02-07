@@ -1,4 +1,7 @@
+import 'package:app_adega/screens/cadastro.dart';
 import 'package:app_adega/screens/carregamento.dart';
+import 'package:app_adega/screens/home.dart';
+import 'package:app_adega/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Carregamento(),
+
+      //home: Carregamento(),
+      routes: {
+        '/': (context) => Carregamento(),
+        '/cadastro': (context) => Cadastro(),
+        '/login': (context) => Login(),
+        '/home': (context) => Home(),
+      },
     );
   }
 }
